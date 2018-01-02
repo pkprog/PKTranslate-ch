@@ -15,51 +15,55 @@
     <script src="/lib/utils.js" type="application/javascript"></script>
 </head>
 <body>
-    <form style="background-color: #fbfbfb;
+    <div class="container" style="background-color: #fbfbfb;
             padding: 10px;
             border-color: green; border-width: thin; border-style: solid;">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm h4">
-                    <label>Настройка переводчика PKTranslate</label>
-                </div>
+        <div class="row">
+            <div class="col-sm h4">
+                <label>Настройка переводчика PKTranslate</label>
             </div>
-            <div class="row">
-                <div class="col-sm">
-                    <form-group>
-                        <a id="linkToYandexAPI"
-                           href="https://tech.yandex.ru/translate/"
-                           target="_blank"
-                           class="btn-link"
-                        >API-Ключ (бесплатный), полученный от yandex: https://tech.yandex.ru/translate/
-                        </a>
-                    </form-group>
-                </div>
-            </div>
-
-            <div class="row">
-                <!--value="trnsl.1.1.20151025T080555Z.2fda8626df3d044c.4c770ec94a3babad2518ba4375b72ea066335390"-->
-                <div class="col-sm">
-                    <div class="form-group">
-                        <label id="yandexApiKeyLabel" for="yandexApiKey">Yandex.Translate API ключ</label>
-                        <input id="yandexApiKey"
-                               type="text"
-                               maxlength="2000"
-                               title="API-Ключ (бесплатный) полученный от yandex: https://tech.yandex.ru/translate/"
-                               value=""
-                               class="form-control"
-                        />
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-sm">
-                    <button type="submit" class="btn btn-primary" onclick="false">Сохранить</button>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <div class="form-group">
+                    <a id="linkToYandexAPI"
+                       href="https://tech.yandex.ru/translate/"
+                       target="_blank"
+                       class="btn-link"
+                    >API-Ключ (бесплатный), полученный от yandex: https://tech.yandex.ru/translate/
+                    </a>
                 </div>
             </div>
         </div>
-    </form>
+        <div class="row">
+            <!--value="trnsl.1.1.20151025T080555Z.2fda8626df3d044c.4c770ec94a3babad2518ba4375b72ea066335390"-->
+            <div class="col-sm">
+                <div class="form-group">
+                    <label id="yandexApiKeyLabel" for="yandexApiKey">Yandex.Translate API ключ</label>
+                    <input id="yandexApiKey"
+                           type="text"
+                           maxlength="2000"
+                           title="API-Ключ (бесплатный) полученный от yandex: https://tech.yandex.ru/translate/"
+                           value=""
+                           class="form-control"
+                    />
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm form-group">
+                <ul class="list-inline">
+                    <li class="list-inline-item">
+                        <button type="button" class="btn btn-primary" id="yandexApiKeySaveButton">Сохранить</button>
+                    </li>
+                    <li class="list-inline-item">
+                        <span class="badge badge-info form-control" id="yandexApiKeySavedBadge">Сохранено</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
     <script src="options.js" type="application/javascript"></script>
 </body>
