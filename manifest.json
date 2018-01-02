@@ -1,0 +1,37 @@
+{
+  "manifest_version": 2,
+  "name": "PKTranslate",
+  "version": "1.0.0",
+
+  "developer": { "name": "pkhizhnyakov" },
+
+  "description": "English-Russian translator using Yandex.Translate API",
+  "icons": {
+    "16": "icons/translate-16.png",
+    "32": "icons/translate-32.png",
+    "48": "icons/translate-48.png",
+    "64": "icons/translate-64.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["lib/constants.js", "lib/utils.js", "scripts/webpage/content_script.js"],
+      "run_at": "document_end"
+    }
+  ],
+
+  "permissions": ["activeTab", "storage", "webRequest", "tabs"],
+
+  "browser_action": {
+    "default_icon": "icons/translate-32.png",
+    "default_title": "Перевести выделенный текст",
+    "browser_style": true,
+    "default_popup": "panel/panel_body.html"
+  },
+
+  "background": {
+    "scripts": ["lib/constants.js", "lib/utils.js", "lib/processWithYandex.js", "scripts/background/background.js"]
+  }
+
+}
