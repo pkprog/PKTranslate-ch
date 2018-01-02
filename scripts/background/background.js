@@ -14,13 +14,11 @@ logDebug("loaded");
  * Click button "Translate"
  */
 function askForSelectedText() {
-    browser.tabs.query({currentWindow: true, active: true}).then(function(result) {
+    chrome.tabs.query({currentWindow: true, active: true}, function(result) {
         logDebug("message send to content_script script");
-        browser.tabs.sendMessage(result[0].id, {
+        chrome.tabs.sendMessage(result[0].id, {
             command: COMMANDS.BG_TAKE_SELECTED_TEXT
         });
-    }, function(error) {
-        logError("error getting current tab: "+ error);
     });
 }
 
@@ -70,19 +68,9 @@ chrome.runtime.onMessage.addListener((message) => {
 });
 
 function getOptions(doAfterRestoreFunction) {
-    browser.storage.local.get(PK_TRANSLATE_OPTIONS_KEY_YANDEX_API_KEY).then(function(result) {
-        let apiKey;
-        if (result instanceof Array && result.length === 1) { //for old Firefox
-            logDebug("Old Chromium request: " + result[0][PK_TRANSLATE_OPTIONS_KEY_YANDEX_API_KEY]);
-            apiKey = result[0][PK_TRANSLATE_OPTIONS_KEY_YANDEX_API_KEY];
-        } else { //for new Firefox
-            logDebug("New Chromium request: " + result[PK_TRANSLATE_OPTIONS_KEY_YANDEX_API_KEY]);
-            apiKey = result[PK_TRANSLATE_OPTIONS_KEY_YANDEX_API_KEY];
-        }
-        doAfterRestoreFunction(apiKey);
-    }, function(error) {
-        logError("Error:" + error);
-    });
+    let apiKey = localStorage[PK_TRANSLATE_OPTIONS_KEY_YANDEX_API_KEY];
+    logDebug("Restored options: key=" + apiKey);
+    doAfterRestoreFunction(apiKey);
 }
 
 /*

@@ -32,6 +32,7 @@
 
   "background": {
     "scripts": ["lib/constants.js", "lib/utils.js", "lib/processWithYandex.js", "scripts/background/background.js"]
-  }
+  },
 
+  "options_page": "options/options.html"
 }

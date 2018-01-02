@@ -3,36 +3,64 @@
 <html>
 <head>
     <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Yandex.Translate API ключ</title>
+    <title>Настройка переводчика PKTranslate</title>
+
+    <script src="/lib/jquery-3.2.1.slim.min.js" type="application/javascript"></script>
+    <script src="/lib/popper.min.js" type="application/javascript"></script>
+
+    <link href="bootstrapcss/bootstrap.min.css" rel="stylesheet" media="all">
+    <script src="bootstrapcss/bootstrap.min.js" type="application/javascript"></script>
+
     <script src="/lib/constants.js" type="application/javascript"></script>
     <script src="/lib/utils.js" type="application/javascript"></script>
 </head>
 <body>
-    <form>
-        <div style="width: 100%">
-            <label for="linkToYandexAPI" style="display: inline-block; font-family: 'Segoe UI', sans-serif;font-size: 1.25rem;">Описание</label>
-            <p><a id="linkToYandexAPI"
-                  href="https://tech.yandex.ru/translate/"
-                  target="_blank"
-                  style="font-family: Arial, 'Segoe UI', sans-serif; font-size: 1.25rem;"
-            >API-Ключ (бесплатный), полученный от yandex: https://tech.yandex.ru/translate/
-            </a></p>
-        </div>
-        <!--value="trnsl.1.1.20151025T080555Z.2fda8626df3d044c.4c770ec94a3babad2518ba4375b72ea066335390"-->
-        <div style="width: 100%;">
-            <label id="yandexApiKeyLabel" for="yandexApiKey" style="display: inline-block; font-family: 'Segoe UI', sans-serif;font-size: 1.25rem;">Yandex.Translate API ключ</label>
-            <input id="yandexApiKey"
-                   type="text"
-                   maxlength="2000"
-                   title="API-Ключ (бесплатный) полученный от yandex: https://tech.yandex.ru/translate/"
-                   value=""
-                   style="width: 80%"
-            />
-        </div>
-        <div style="width: 100%;">
-            <button class="" style="width: 100px; text-align: center" onclick="false">Save</button>
+    <form style="background-color: #fbfbfb;
+            padding: 10px;
+            border-color: green; border-width: thin; border-style: solid;">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm h4">
+                    <label>Настройка переводчика PKTranslate</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm">
+                    <form-group>
+                        <a id="linkToYandexAPI"
+                           href="https://tech.yandex.ru/translate/"
+                           target="_blank"
+                           class="btn-link"
+                        >API-Ключ (бесплатный), полученный от yandex: https://tech.yandex.ru/translate/
+                        </a>
+                    </form-group>
+                </div>
+            </div>
+
+            <div class="row">
+                <!--value="trnsl.1.1.20151025T080555Z.2fda8626df3d044c.4c770ec94a3babad2518ba4375b72ea066335390"-->
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label id="yandexApiKeyLabel" for="yandexApiKey">Yandex.Translate API ключ</label>
+                        <input id="yandexApiKey"
+                               type="text"
+                               maxlength="2000"
+                               title="API-Ключ (бесплатный) полученный от yandex: https://tech.yandex.ru/translate/"
+                               value=""
+                               class="form-control"
+                        />
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm">
+                    <button type="submit" class="btn btn-primary" onclick="false">Сохранить</button>
+                </div>
+            </div>
         </div>
     </form>
+
     <script src="options.js" type="application/javascript"></script>
 </body>
 </html>
