@@ -1,8 +1,9 @@
 {
   "manifest_version": 2,
   "name": "PKTranslate",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "default_locale": "ru",
+  "minimum_opera_version": "42",
 
   "developer": { "name": "pkhizhnyakov" },
 
@@ -11,7 +12,8 @@
     "16": "icons/translate-16.png",
     "32": "icons/translate-32.png",
     "48": "icons/translate-48.png",
-    "64": "icons/translate-64.png"
+    "64": "icons/translate-64.png",
+    "128": "icons/translate-128.png"
   },
 
   "content_scripts": [
